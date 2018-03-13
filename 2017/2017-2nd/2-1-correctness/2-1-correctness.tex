@@ -1,0 +1,178 @@
+\documentclass{tufte-handout}
+\usepackage{CJKutf8}
+
+%\geometry{showframe}% for debugging purposes -- displays the margins
+
+\input{hw-preamble}
+\input{2-1-preamble}
+
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{2-1 The Correctness of Algorithms\thanks{Wish all your correctness proofs were \uppercase{correct}!}}
+\author[hengxin]{Hengfeng Wei}
+\date{13 March 2018}  % if the \date{} command is left out, the current date will be used
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent We show how to prove the correctness of two algorithms:
+One is an iterative algorithm called $\equal(S_1, S_2)$ for comparing two strings.
+The other is the classic recursive Euclid algorithm for computing the greatest common divisor (gcd) of two natural numbers.
+\end{abstract}
+
+%\printclassoptions
+
+\section{DH Problem 5.9: $\equal(S_1, S_2)$}  \label{section:problem-5.9}
+  Construct a function $\equal(S_1, S_2)$ that tests whether the strings $X$ and $Y$ are equal.
+  It should return true or false accordingly.
+
+  You may use the following operations:
+  \begin{itemize}
+    \item $\texttt{head}(X)$
+    \item $\texttt{tail}(X)$
+    \item $\texttt{last}(X)$
+    \item $\texttt{all-but-last}(X)$
+    \item $\texttt{eq}(s,t)$
+  \end{itemize}
+
+\subsection{Solution}
+
+
+The algorithm $\equal(S_1, S_2)$ is shown in Algorithm~\ref{alg:equal},
+with appropriate assertions attached.
+
+The partial correctness of $\equal$ can be denoted as
+\marginnote{Using the notations of Hoare logic developed by Tony Hoare. \cite{Hoare:CACM69}}
+
+\begin{marginfigure}%
+  \includegraphics[width=0.60\linewidth]{figs/tony-hoare}
+  \label{fig:hoare}
+\end{marginfigure}
+\[
+  P \;\set{\equal}\; Q,
+\]
+meaning that if the input satisfies the precondition $P$, 
+then after $\equal$ the postcondition $Q$ must hold.
+To this end, we show that:
+
+\input{algs/equal}
+
+\begin{enumerate}[(i)]
+  \item $I$ is a loop invariant.
+  \item (2) is an invariant.
+    \[
+      I \land \lnot (X \neq \epsilon \land Y \neq \epsilon \land E = \top) \implies (2)
+    \]
+  \item (3.1) is an invariant
+  \item (3.2) is an invariant
+  \item $Q$ is an invariant
+\end{enumerate}
+
+\section{Extra Problem: $\euclid(m, n)$}  \label{section:euclid}
+
+Prove the following recursive Euclid algorithm for 
+computing the greatest common divisor (gcd) of two natural numbers are totally correct.
+
+\begin{marginfigure}%
+  \includegraphics[width=0.60\linewidth]{figs/euclid}
+  \label{fig:euclid}
+\end{marginfigure}
+
+\input{algs/euclid}
+
+\subsection{Proof}
+
+\marginnote{Also pay attention to the way how to write a mathematical induction proof.}
+
+We prove the partial correctness of \euclid{} by strong mathematical induction on $n$,
+with $m$ any fixed natural number.
+
+\begin{description}
+  \item[Basis:] $n = 0$. We have that
+    \marginnote{Make sure you understand each of these three ``='''s:
+      \begin{enumerate}[(1)]
+	\item By $n = 0$;
+	\item By the property of $\gcd$;
+	\item By the \euclid{} algorithm.
+      \end{enumerate}
+    }
+    \[
+      \gcd(m,n) = \gcd(m,0) = m = \euclid(m,0).
+    \]
+  \item[Inductive Hypothesis:]
+    Suppose that $n \ge 1$ and
+    \[
+      \gcd(m, k) = \euclid(m, k), \;\forall 0 \le k \le n - 1.
+    \]
+  \item[Inductive Step:]
+    We need to prove that ($n \ge 1$)
+    \[
+      \gcd(m, n) = \euclid(m, n).
+    \]
+
+    According to \euclid{}, we have
+    \[
+      \euclid(m,n) = \euclid(n, m \bmod n).
+    \]
+    Since $(m \bmod n) < n$, by the inductive hypothesis, we have
+    \[
+      \euclid(n, m \bmod n) = \gcd(n, m \bmod n).
+    \]
+    Therefore, it suffices to prove that
+    \[
+      \boxed{\gcd(m,n) = \gcd(n, m \bmod n).}
+    \]
+    For notational convenience, we denote
+    \[
+      d = \gcd(m,n), \quad d' = \gcd(n, m \bmod n).
+    \]
+    Because $d, d' \ge 0$, it is sufficient to obtain $d = d'$
+    by showing that $d \mid d'$ and $d' \mid d$:
+
+    \begin{itemize}
+      \item $d \mid d'$.
+      \item $d' \mid d$.
+    \end{itemize}
+\end{description}
+
+\bibliography{2-1-correctness}
+\bibliographystyle{plainnat}
+
+\end{CJK*}
+\end{document}

@@ -1,0 +1,15 @@
+% file: algs/euclid.tex
+
+\begin{algorithm}[h]
+  \caption{The Euclid Algorithm}
+  \label{alg:euclid}
+  \begin{algorithmic}[1]
+    \Procedure{Euclid}{$m,n$} 
+    \If{$n > 0$}
+      \State \Return $m$
+    \Else
+    \State \Return \Call{Euclid}{$n, m \bmod n$}
+    \EndIf
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

@@ -1,0 +1,40 @@
+% file: algs/equal.tex
+
+\begin{algorithm}[t]
+  \caption{Comparing two strings.}
+  \label{alg:equal}
+  \begin{algorithmic}[1]
+    \Procedure{Equal}{$S_1,S_2$} 
+      \LineComment{\teal{$P: S_1, S_2$ are strings}}
+      \State $X \gets S_1$
+      \State $Y \gets S_2$
+      \State $E \gets \top$
+      \hStatex
+
+      \LineComment{\teal{(1) $I: S_1 = S_2 \iff X = Y \land E = \top$}}
+      \While{$X \neq \epsilon \land Y \neq \epsilon \land E = \top$}
+	\If{$\texttt{eq}(\texttt{head}(X), \texttt{head}(Y))$}
+	  \State $X \gets \texttt{tail}(X)$
+	  \State $Y \gets \texttt{tail}(Y)$
+	\Else
+	  \State $E \gets \bot$
+	\EndIf
+      \EndWhile
+
+      \hStatex
+      \LineComment{\teal{(2) $S_1 = S_2 \iff (X = \epsilon \land Y = \epsilon) \land E = \top$}}
+      \If{$\lnot (X = \epsilon \land Y = \epsilon)$}
+        \State $E \gets \bot$
+	\LineComment{\teal{(3.1) $S_1 \neq S_2 \land E = \bot$}}
+      \Else
+	\State \texttt{DoNothing}  \Comment{Just for inserting an assertion here.}
+	\LineComment{\teal{(3.2) $S_1 = S_2 \iff E = \top$}}
+      \EndIf
+
+      \hStatex
+      \LineComment{\teal{(4) $Q: S_1 = S_2 \iff E = \top$}}
+      \State \Return $E$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+
