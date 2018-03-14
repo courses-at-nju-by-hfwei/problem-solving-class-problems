@@ -13,7 +13,7 @@
 \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
 \graphicspath{{graphics/}}
 
-\title{2-1 The Correctness of Algorithms\thanks{Wish all your correctness proofs were \uppercase{correct}!}}
+\title{2-1 The Correctness of Algorithms\thanks{Wish all your correctness proofs were \uppercase{correct}! May God bless you!}}
 \author[hengxin]{Hengfeng Wei}
 \date{13 March 2018}  % if the \date{} command is left out, the current date will be used
 
@@ -51,9 +51,10 @@
 \maketitle% this prints the handout title, author, and date
 
 \begin{abstract}
-\noindent We show how to prove the correctness of two algorithms:
+\noindent We show how to prove the correctness of two algorithms.
 One is an iterative algorithm called $\equal(S_1, S_2)$ for comparing two strings.
-The other is the classic recursive Euclid algorithm for computing the greatest common divisor (gcd) of two natural numbers.
+The other is the classic recursive Euclid algorithm for 
+computing the greatest common divisor (gcd) of two natural numbers.
 \end{abstract}
 
 %\printclassoptions
@@ -78,35 +79,72 @@ The algorithm $\equal(S_1, S_2)$ is shown in Algorithm~\ref{alg:equal},
 with appropriate assertions attached.
 
 The partial correctness of $\equal$ can be denoted as
-\marginnote{Using the notations of Hoare logic developed by Tony Hoare. \cite{Hoare:CACM69}}
+\marginnote{We are using the notations of Hoare logic developed by Tony Hoare.}
 
 \begin{marginfigure}%
   \includegraphics[width=0.60\linewidth]{figs/tony-hoare}
   \label{fig:hoare}
 \end{marginfigure}
+
+\marginnote{\cite{Hoare:CACM69}}
+
 \[
   P \;\set{\equal}\; Q,
 \]
-meaning that if the input satisfies the precondition $P$, 
-then after $\equal$ the postcondition $Q$ must hold.
+meaning that if the input satisfies the precondition $P$
+and the algorithm $\equal$ eventually terminates,
+then the postcondition $Q$ must hold.
 To this end, we show that:
 
 \input{algs/equal}
 
 \begin{enumerate}[(i)]
-  \item $I$ is a loop invariant.
-  \item (2) is an invariant.
+  \item $I$ is a loop invariant. That is,
     \[
-      I \land \lnot (X \neq \epsilon \land Y \neq \epsilon \land E = \top) \implies (2)
+      P \;\set{\texttt{Lines~\ref{line:init-begin}--\ref{line:init-end}}}\; I
     \]
-  \item (3.1) is an invariant
-  \item (3.2) is an invariant
-  \item $Q$ is an invariant
+    \[
+      \big(I \land (X \neq \epsilon \land Y \neq \epsilon \land E = \top)\big) \;\set{\texttt{Lines~\ref{line:while-begin}--\ref{line:while-end}}}\; I
+    \]
+    Stop reading! Take your pencil and paper! 
+    \marginnote{\emph{Writing is nature’s way of letting you know how sloppy your thinking is.} \\ \hfill --- Richard Guindon (cartoon), 1989}
+    Write down your arguments to convince yourself that the two formulae above indeed hold.
+  \item (2) is an invariant. It suffices to show that
+    \[
+      \big(I \land \lnot (X \neq \epsilon \land Y \neq \epsilon \land E = \top)\big) \implies (2).
+    \]
+    We proceed in two ways: syntactically and semantically. You choose the way you feel comfortable with.
+
+    Syntactically, we prove that $(2)$ can be derived from $\big(I \land \lnot (X \neq \epsilon \land Y \neq \epsilon \land E = \top)\big)$
+    in propositional logic. 
+    This is a rather formal way.
+    \begin{gather}
+      I \land (X = \epsilon \lor Y = \epsilon \lor E = \bot) \\ \nonumber
+      = \big(I \land (X = \epsilon)\big) \lor \big(I \land (Y = \epsilon)\big) \lor \big(I \land (E = \bot)\big)
+    \end{gather}
+    In the following, we show that each of the three disjuncts implies $(2)$.
+    \begin{gather}
+      I \land (X = \epsilon) \\ \nonumber
+      = (S_1 = S_2 \iff X = Y \land E = \top) \land (X = \epsilon)
+    \end{gather}
+    We need to show that  
+  \item (3.1) is an invariant. It suffices to show that
+    \[
+      \big((2) \land \lnot (X = \epsilon \land Y = \epsilon) \land E = \bot\big) \implies (3.1).
+    \]
+  \item (3.2) is an invariant. It suffices to show that
+    \[
+      \big((2) \land (X = \epsilon \land Y = \epsilon) = \bot\big) \implies (3.2).
+    \]
+  \item $Q$ is an invariant. It suffices to show that
+    \[
+      \big((3.1) \implies Q\big) \land \big((3.2) \implies Q\big).
+    \]
 \end{enumerate}
 
 \section{Extra Problem: $\euclid(m, n)$}  \label{section:euclid}
 
-Prove the following recursive Euclid algorithm for 
+Prove the recursive Euclid algorithm as shown in Algorithm~\ref{alg:euclid} for 
 computing the greatest common divisor (gcd) of two natural numbers are totally correct.
 
 \begin{marginfigure}%
