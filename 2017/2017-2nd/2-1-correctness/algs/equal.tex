@@ -11,7 +11,7 @@
       \State $E \gets \top$	\label{line:init-end}
       \hStatex
 
-      \LineComment{\teal{(1) $I: S_1 = S_2 \iff X = Y \land E = \top$}}
+      \LineComment{\teal{(1) $I: S_1 = S_2 \iff (X = Y \land E = \top)$}}
       \While{$X \neq \epsilon \land Y \neq \epsilon \land E = \top$}	\label{line:while-loop}
 	\If{$\texttt{eq}(\texttt{head}(X), \texttt{head}(Y))$}  \label{line:while-begin}
 	  \State $X \gets \texttt{tail}(X)$
@@ -22,7 +22,7 @@
       \EndWhile
 
       \hStatex
-      \LineComment{\teal{(2) $S_1 = S_2 \iff (X = \epsilon \land Y = \epsilon) \land E = \top$}}
+      \LineComment{\teal{(2) $S_1 = S_2 \iff \big((X = \epsilon \land Y = \epsilon) \land E = \top\big)$}}
       \If{$\lnot (X = \epsilon \land Y = \epsilon)$}
         \State $E \gets \bot$
 	\LineComment{\teal{(3.1) $S_1 \neq S_2 \land E = \bot$}}
