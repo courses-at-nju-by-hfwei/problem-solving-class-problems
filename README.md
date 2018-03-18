@@ -4,9 +4,13 @@ Solutions to Selected Problems in the Problem Solving Class.
 
 ## How to Contribute
 
+We follow the [GitHub Standard Fork & Pull Request Workflow](https://gist.github.com/Chaser324/ce0505fbed06b947d962).
+(So [set up Git](https://help.github.com/articles/set-up-git/) first.)
+
+
 ## Maintainer
 - Hengfeng Wei (hfwei@nju.edu.cn)
-- YOUR NAME
+- YOUR NAMES
 
 ## Acknowledgment
 
