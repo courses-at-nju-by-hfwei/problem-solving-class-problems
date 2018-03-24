@@ -1,0 +1,23 @@
+% file: algs/sum-of-depths.tex
+
+\begin{algorithm}[t]
+  \caption{Calculate the sum of depths of all nodes of a tree $T$.}
+  \label{alg:sum-of-depths}
+  \begin{algorithmic}[1]
+    \Procedure{Sum-of-Depth}{\null}
+      \State \Return $\Call{Sum-of-Depth}{T, 0}$ 
+    \EndProcedure
+
+    \Statex
+    \Procedure{Sum-of-Depth}{$r, depth$} \Comment{$r$: root of a tree}
+      \If{$T$ is a leaf}
+        \State \Return $depth$
+      \Else
+	\ForAll{child vertex $v$ of $r$}
+	  \State $depth \gets depth + \Call{Sum-of-Depth}{v, depth + 1}$
+	\EndFor
+	\State \Return $depth$
+      \EndIf
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

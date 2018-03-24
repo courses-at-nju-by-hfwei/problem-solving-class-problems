@@ -1,0 +1,22 @@
+% file: problems/tree-bfs-depth.tex
+
+\section{BFS on Tree (UD Problem 4.3)}
+
+Write algorithms that solve the following problems by performing \emph{breadth-first traversals} of the given trees. 
+You may assume the availability of a queue $Q$. 
+The operations on $Q$ include adding an item to the rear, 
+retrieving and removing an item from the front, and testing $Q$ for emptiness.
+    
+\begin{enumerate}[(a)]
+  \item Given a tree $T$ whose nodes contain integers, 
+    print a list consisting of the sum of contents of nodes at depth 0, 
+    the sum of contents of nodes at depth 1, etc.
+  \item Given a tree $T$, find the depth $K$ with the maximal number of nodes in $T$. 
+    If there are several such $K$s, return their maximum.
+\end{enumerate}
+
+\subsection{Solution}
+
+\input{algs/sum-at-depth}
+\input{algs/nodes-at-depth}
+
