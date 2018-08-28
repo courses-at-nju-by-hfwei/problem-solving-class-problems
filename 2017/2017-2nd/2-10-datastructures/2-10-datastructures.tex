@@ -1,0 +1,201 @@
+\documentclass{tufte-handout}
+
+\usepackage{hyperref}
+
+\input{tufte-preamble}
+\input{hw-preamble}
+
+\title{2-10 The mutual realization of stack and queue}
+\author[StardustDL]{杜星亮 {\normalsize (stardustdl@163.com)}}
+\date{2018/8/1}
+
+\begin{document}
+
+\begin{CJK*}{UTF8}{gbsn}
+
+\maketitle
+
+\begin{abstract}
+\noindent 本文介绍使用栈实现队列和使用队列实现栈的方法。为使问题更加有意义，我们将尽量选择一个较优的实现方法。
+\footnote{\href{https://stardustdl.github.io/ProblemSolving/2018/08/28/The-mutual-realization-of-stack-and-queue/}{如发现错误，欢迎指正，网页版链接}}
+\end{abstract}
+
+\section{第0节：问题引入}
+\begin{itemize}
+    \item 栈：先进后出的线性结构，仅允许对栈顶进行添加（push），删除（pop），访问（peek）操作，空间复杂度线性，单次操作时间复杂度为常数
+    \item 队列：先进先出线性结构，仅允许对队尾进行添加（enqueue）操作，以及对队首进行删除（dequeue），访问（peek）操作，空间复杂度线性，单次操作时间复杂度为常数
+    \item 需要解决的问题，在使用常数个额外空间的条件下：
+    \begin{itemize}
+        \item 使用两个栈尽可能高效地实现一个队列
+        \item 使用两个队列尽可能高效地实现一个栈
+    \end{itemize}
+\end{itemize}
+
+\section{第1节：使用栈实现队列}
+\subsection{思路}
+考虑到栈先进后出与队列先进先出的特点，使用一个栈 $A$ 作为队列尾，数据从这里流入；使用另一个栈 $B$ 作为队列头，数据从这里流出。我们要求先流入的数据先流出，
+通过将栈 $A$ 中的元素不断弹出，并压入栈 $B$，利用先进后出特性，$B$ 的出栈顺序即 $A$ 出栈顺序的逆序，而 $A$ 出栈顺序为其入栈顺序的逆序，故 $B$ 的出栈顺序为 $A$ 的入栈顺序，即达到先进先出的效果。
+综上，给出实现的伪代码。
+\marginnote{栈能将输入逆序这一点很重要，之后我们还将用到}
+
+\begin{algorithm}[t]
+\caption{队列三个操作的实现}
+\begin{algorithmic}[1]
+    \LineComment{\teal{Move elements in $A$ to $B$}}
+    \Procedure{SWAP}{$A,B$} 
+    \While{$A\ne \emptyset$}
+    \State $value \gets$ POP($A$)
+    \State PUSH($B,value$)
+    \EndWhile
+    \hStatex
+    \EndProcedure
+
+    \Procedure{ENQUEUE}{$A,B,value$} 
+    \State PUSH($A,value$)
+    \hStatex
+    \EndProcedure
+
+    \Procedure{DEQUEUE}{$A,B$} 
+    \If{$B= \emptyset$}
+    \State SWAP($A,B$)
+    \EndIf
+    \Return POP($B$)
+    \hStatex
+    \EndProcedure
+
+    \Procedure{PEEK}{$A,B$} 
+    \If{$B= \emptyset$}
+    \State SWAP($A,B$)
+    \EndIf
+    \Return PEEK($B$)
+    \hStatex
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{复杂度分析}
+\begin{itemize}
+    \item 空间复杂度：栈的空间复杂度是线性的，而且这里队列中的每一个数据仅会在两个栈中的某一个中存在，故此实现的空间复杂度为线性
+    \item 时间复杂度：注意到每个数据从入队到出队只会经历：进入 $A$，离开 $A$，进入 $B$，离开 $B$ 四次移动，且每次移动复杂度为常数，故均摊复杂度为常数。
+\end{itemize}
+
+\newpage
+\section{第2节：使用队列实现栈}
+\subsection{思路}
+\marginnote{这里遇到了个难题：利用栈可以很容易地支持翻转操作，但队列无法直接对输入序列进行顺序的改变。}
+队列中一个重要特点是，我们可以通过不断删除队列头，并将其放入队列尾，实现在不影响顺序的前提下对队列中每个元素的访问，访问一遍后，我们仍可以很容易恢复到最初的队列状态。
+但这一操作的弊端是，我们访问某个元素，必须将其前面的所有元素出队，这一操作的时间复杂度是最坏情况下是线性的。
+\marginnote{既然我们能访问所有元素了，那只要访问最后一个就是先入后出了，很简单嘛，可是队列“滚”的次数太多了（为线性）...}
+为下文叙述方便，将上述操作定义为过程“循环出入队”，即将队首出队后入队，实现队列滚动。时间复杂度由以上分析，为 $O(|Q|))$。
+我们使用一个类似缓冲池的技巧：设两个队列 $Q_s,Q_a$，$Q_a$ 用于存储靠近栈顶的一部分元素，$Q_s$ 用于存储其余的元素。其中 $Q_a$ 有可变的容量上限 $cap(Q_a)$，$Q_s$ 容量无限制。
+\marginnote{你可以把 $Q_s$ 看成内存（主存），把 $Q_a$ 看成 CPU 中的高速缓存}
+接下来，我们依次实现栈的三个操作：
+\begin{itemize}
+    \item 入栈操作
+    \begin{itemize}
+        \item 若 $Q_a$ 不满，直接入队到 $Q_a$ 。时间复杂度：$O(1)$
+        \item 若 $Q_a$ 满，将 $Q_a$ 出队，并将队列头入队到 $Q_s$。然后将待入栈元素入队到 $Q_a$。时间复杂度：$O(1)$
+    \end{itemize}
+    \item 出栈操作
+    \begin{itemize}
+        \item 若 $Q_a$ 非空，对 $Q_a$ 循环出入队，使得原队尾在队头，返回队尾，并出队。时间复杂度：$O(|Q_a|)$
+        \item 若 $Q_a$ 空，对 $Q_s$ 循环出入队，使得原队尾部的 $|Q_a|+1$ 个元素出队，返回队尾，其余元素进入 $Q_a$，顺序不变。时间复杂度：$O(|Q_s|)$
+    \end{itemize}
+    \item 访问栈顶操作
+    \begin{itemize}
+        \item 若 $Q_a$ 非空，对 $Q_a$ 循环出入队，使得原队尾在队头，返回队尾，并恢复最初顺序，时间复杂度：$O(|Q_a|)$
+        \item 若 $Q_a$ 空，对 $Q_s$ 循环出入队，使得原队尾部的 $|Q_a|$ 个元素出队，返回队尾，所有元素进入 $Q_a$，顺序不变。时间复杂度：$O(|Q_s|)$
+    \end{itemize}
+\end{itemize}
+\marginnote{似乎看不出有什么改进？是的，因为我们还没指定 $cap(Q_a)$}
+为让这个实现变得有效，我们先来分析其时间复杂度来自哪里：
+\textbf{每个元素}从入栈到出栈经历了：
+\begin{enumerate}
+\item 压入：$O(1)$
+\item （可选）从 $Q_a$ 到 $Q_s$：$O(1)$
+\item （可选）从 $Q_s$ 到 $Q_a$：$O(|Q_s|/|Q_a|)$（最坏情况）
+\item 弹出 以下两种二选一：
+    \begin{itemize}
+        \item 从 $Q_s$ 出队：$O(1)$
+        \item 从 $Q_a$ 出队：$O(|Q_a|)$
+    \end{itemize}
+\end{enumerate}
+接下来考虑最坏情况，那么每个元素经历入队出队共计 $O(|Q_s|/|Q_a|+|Q_a|)$.
+\begin{itemize}
+    \item 由 $|Q_s|/|Q_a|+|Q_a| \ge 2\sqrt{|Q_s|}$ 当且仅当 $|Q_s|/|Q_a|=|Q_a|$ 即 $|Q_a|=\sqrt{|Q_s|}$.
+    \item 故最低为 $O(\sqrt{|Q_s|})$
+\end{itemize}
+故当我们将 $Q_a$ 的容量限制在 $\sqrt{|Q_s|}$ 时，对于 $n$ 个元素的栈，有 $|Q_s|\le n$ 总复杂度估计为 $O(n\sqrt n)$.
+平均每次操作复杂度$O(n\sqrt n/(2n))=O(\sqrt n)$，由此可见，性能的确有较大提高。
+
+\marginnote{如果你像上面那样类比了计算机中的组件，那么我们的算法做的，就可以看成从内存中读取一段，放入高速缓存中，利用高命中率来减少我们对相对低速的内存的访问}
+
+综上，给出实现的伪代码。
+
+\begin{algorithm}[t]
+\caption{栈三个操作的实现}
+\begin{algorithmic}[1]
+
+    \Procedure{PUSH}{$Q_a,Q_s,value$} 
+    \If{$|Q_a|\ge \sqrt{|Q_s|}$}
+    \State ENQUEUE($Q_s$,DEQUEUE($Q_a$))
+    \EndIf
+    \State ENQUEUE($Q_a,value$)
+    \hStatex
+    \EndProcedure
+
+    \Procedure{POP}{$Q_a,Q_s$} 
+    \If{$Q_a= \emptyset$}
+    \State $size \gets \sqrt{|Q_s|}$, $i \gets 0$
+    \State Roll $Q_s$ until the last $size+1$ elements are at the front
+    \While{$i < size$}
+    \State ENQUEUE($Q_a$,DEQUEUE($Q_s$))
+    \State $i \gets i+1$
+    \EndWhile
+    \Return DEQUEUE($Q_s$)
+    \Else
+    \State Roll $Q_a$ until the last element is at the front
+    \Return DEQUEUE($Q_a$)
+    \EndIf
+    \hStatex
+    \EndProcedure
+
+    \Procedure{PEEK}{$A,B$} 
+    \If{$Q_a= \emptyset$}
+    \State $size \gets \sqrt{|Q_s|}$, $i \gets 0$
+    \State Roll $Q_s$ until the last $size$ elements are at the front
+    \While{$i < size$}
+    \State ENQUEUE($Q_a$,DEQUEUE($Q_s$))
+    \State $i \gets i+1$
+    \EndWhile
+    \State $value \gets$ DEQUEUE($Q_s$)
+    \State ENQUEUE($Q_a,value$)
+    \Return $value$
+    \Else
+    \State Roll $Q_a$ until the last element is at the front
+    \State $value \gets$ DEQUEUE($Q_a$)
+    \State ENQUEUE($Q_a,value$)
+    \Return $value$
+    \EndIf
+    \hStatex
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{复杂度分析}
+\begin{itemize}
+    \item 空间复杂度：队列的空间复杂度是线性的，而且这里栈中的每一个数据仅会在两个队列中的某一个中存在，故此实现的空间复杂度为线性
+    \item 时间复杂度：通过思路中的分析，单次操作均摊复杂度为 $O(\sqrt{n})$。
+\end{itemize}
+
+\section{更多讨论}
+\begin{itemize}
+    \item \href{https://cstheory.stackexchange.com/questions/2562/one-stack-two-queues/5655#5655}{时间复杂度下限的讨论}
+    \item \href{https://cstheory.stackexchange.com/questions/2562/one-stack-two-queues/2589#2589}{队列实现栈的 CSharp 代码实现}
+\end{itemize}
+
+\bibliography{2-10-datastructures}
+\bibliographystyle{plainnat}
+
+\end{CJK*}
+\end{document}
