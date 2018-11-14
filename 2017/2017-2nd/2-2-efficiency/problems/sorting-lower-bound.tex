@@ -2,9 +2,26 @@
 
 \section{Lower Bound for Comparison-based Sorting (UD Problem 6.13)}
 
-Prove a lower bound of $O(n \log n)$ on the time complexity of any comparison-based sorting algorithm.
+Prove a lower bound of $O(n \lg n)$ on the time complexity of any comparison-based sorting algorithm.
 
 \subsection{Understanding the Problem}
+
+First of all, this problem is \emph{flawed}, if not wrong.
+\marginnote{I am not surprised at all if you are good at proving something wrong to be a theorem.}
+It should be $\Omega(n \lg n)$, instead of $O(n \lg n)$.
+
+{\bf Comparison-based Sorting.}
+
+\begin{itemize}
+  \item We only consider the sorting algorithms in which
+    \marginnote{Counting sort, radix sort, or bucket sort is not a comparison-based sorting algorithm.}
+    comparison is the only way to obtain order information between elements; and
+  \item Comparisons of elements are the critical operations we care about.
+    \marginnote{In \href{https://en.wikipedia.org/wiki/Pancake\_sorting}{pancake sorting}, 
+    we are interested in the minimum number of flips (or technically, prefix reversals).\cite{Gates:DM1979}}
+\end{itemize}
+
+{\bf Time complexity $O(n \lg n)$.} Algorithms on the inputs of size $n$.
 
 \subsection{Solution}
 
