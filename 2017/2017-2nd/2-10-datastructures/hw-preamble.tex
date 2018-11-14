@@ -1,0 +1,70 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% File: hw-preamble.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Set fonts commands
+\newcommand{\song}{\CJKfamily{song}} 
+\newcommand{\hei}{\CJKfamily{hei}} 
+\newcommand{\kai}{\CJKfamily{kai}} 
+\newcommand{\fs}{\CJKfamily{fs}}
+
+% colors
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\teal}[1]{\textcolor{teal}{#1}}
+
+% math
+\newcommand{\set}[1]{\{#1\}}
+
+% For math
+\usepackage{amsmath}
+
+% Define theorem-like environments
+\usepackage[amsmath, thmmarks]{ntheorem}
+
+\theoremstyle{break}
+\theorembodyfont{\song}
+\theoremseparator{}
+\newtheorem*{problem}{Problem}
+
+\theorempreskip{2.0\topsep}
+\theoremheaderfont{\kai\bfseries}
+\theoremseparator{:}
+\newtheorem*{solution}{Solution}
+
+\theoremstyle{break}
+\theorempostwork{\bigskip\hrule}
+\theoremsymbol{\ensuremath{\Box}}
+\newtheorem*{proof}{Proof}
+
+% algorithms
+\usepackage[]{algorithm}
+\usepackage[noend]{algpseudocode} % noend
+% See [Adjust the indentation whithin the algorithmicx-package when a line is broken](https://tex.stackexchange.com/a/68540/23098)
+\newcommand{\algparbox}[1]{\parbox[t]{\dimexpr\linewidth-\algorithmicindent}{#1\strut}}
+\newcommand{\hStatex}[0]{\vspace{5pt}}
+\makeatletter
+\newlength{\trianglerightwidth}
+\settowidth{\trianglerightwidth}{$\triangleright$~}
+\algnewcommand{\LineComment}[1]{\Statex \hskip\ALG@thistlm \(\triangleright\) #1}
+\algnewcommand{\LineCommentCont}[1]{\Statex \hskip\ALG@thistlm%
+  \parbox[t]{\dimexpr\linewidth-\ALG@thistlm}{\hangindent=\trianglerightwidth \hangafter=1 \strut$\triangleright$ #1\strut}}
+\makeatother
+
+% For figures
+% for fig with caption: #1: width/size; #2: fig file; #3: fig caption
+\newcommand{\fig}[3]{
+  \begin{figure}[htp]
+    \centering
+      \includegraphics[#1]{#2}
+      \caption{#3}
+  \end{figure}
+}
+
+% for fig without caption: #1: width/size; #2: fig file
+\newcommand{\fignocaption}[2]{
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[#1]{#2}
+  \end{figure}
+}
