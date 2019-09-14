@@ -1,0 +1,114 @@
+% 1-0-intro.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper, justified]{tufte-handout}
+
+\input{hw-preamble} % feel free to modify this file
+%%%%%%%%%%%%%%%%%%%%
+\title{第0讲：计算思维导引}
+\me{魏恒峰}{hfwei@nju.edu.cn}{}{}
+\date{\zhtoday} % or like 2019年9月13日
+%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+%%%%%%%%%%%%%%%%%%%%
+\noplagiarism % always keep this line
+%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+  \mfig{width = 0.60\linewidth}{figs/recursion-mirror}
+  \begin{center}{\fcolorbox{blue}{yellow!60}{\parbox{0.50\textwidth}{\large 
+    \begin{itemize}
+      \item 体会``思维的乐趣''
+      \item 初步了解递归与数学归纳法 
+      \item 初步接触算法概念与问题下界概念
+    \end{itemize}}}}
+  \end{center}
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%
+\beginrequired
+
+%%%%%%%%%%%%%%%
+\begin{problem}[$27$ 枚硬币]
+  \mfig{width = 0.70\linewidth}{figs/scale}
+
+  你有 $27$ 枚外观一模一样的硬币。
+  已知其中有一枚假币，并且假币的质量比真币轻。
+  现有一个带两个托盘的天平秤。
+  只\red{称量}~\footnote{只允许使用``称量''操作; 不能用手掂}三次，如何找出这枚假币？
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[$n$ 枚硬币]
+  你有 $n$ 枚外观一模一样的硬币。
+  已知其中有一枚假币，并且假币的质量比真币轻。\\
+  现有一个带两个托盘的天平秤。
+  请设计\red{``称量''方案}~\footnote{这就是算法}，找到这枚假币。
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[$n$ 枚硬币问题的下界]
+  你有 $n$ 枚外观一模一样的硬币。
+  已知其中有一枚假币，并且假币的质量比真币轻。\\
+  现有一个带两个托盘的天平秤。
+  \red{最少}
+  ~\footnote{这就是问题的下界}
+  ~\footnote{显然，只考虑特定的\blue{\it 算法}是不够的；你要考虑\blue{\it 问题}本身的性质以及``称量''操作的本质}
+  需要称量多少次，才能找到这枚假币？
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[$12$ 枚硬币]
+  你有 $12$ 枚外观一模一样的硬币。
+  已知其中有一枚假币，其质量与真币不同。\\
+  \red{但是，你不知道假币比真币轻还是重}。
+  现有一个带两个托盘的天平秤。\\
+  只称量三次，如何找出这枚假币，并确定它相对于真币的轻重？
+
+  \mfig{width = 0.80\textwidth}{figs/try}
+\end{problem}
+
+\begin{solution}%
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\beginoptional
+%%%%%%%%%%%%%%%
+\begin{problem}[\ot{} $n$ 枚硬币]
+  你有 $n$ 枚外观一模一样的硬币。
+  已知其中有一枚假币，其质量与真币不同。\\
+  \red{但是，你不知道假币比真币轻还是重}。
+  现有一个带两个托盘的天平秤。\\
+  请用尽可能少~\footnote{最少呢？}~\footnote{``称量''会带来什么信息？这些信息会如何影响问题的性质？}的称量次数，
+  找到这枚假币并确定它相对于真币的轻重。
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\beginfb
+
+你可以写
+~\footnote{优先推荐 \href{http://39.100.120.199}{ProblemOverflow}}
+~\footnote{填写习题调查问卷 1-0}：
+\begin{itemize}
+  \item 对课程及教师的建议与意见
+  \item 教材中不理解的内容
+  \item 希望深入了解的内容
+  \item $\cdots$
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%
+\end{document}
