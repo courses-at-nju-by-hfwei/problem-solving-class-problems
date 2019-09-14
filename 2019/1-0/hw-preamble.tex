@@ -11,6 +11,17 @@
   marginparwidth=50.0mm % width of margin notes
 }
 
+\usepackage{fontawesome}
+\usepackage{graphicx}
+\usepackage{listings}
+%\usepackage{clrscode3e} 
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{exscale}
+\usepackage{relsize}
+\usepackage{textcomp}
+
 % for colors
 \usepackage{xcolor} % usage: \color{red}{text}
 % predefined colors
@@ -77,33 +88,34 @@
 
 % for math
 \usepackage{amsmath, mathtools, amsfonts, amssymb}
+\usepackage{framed}
 \newcommand{\set}[1]{\{#1\}}
 
 % define theorem-like environments
-\usepackage[amsmath, thmmarks]{ntheorem}
+\usepackage[amsmath, thmmarks, framed]{ntheorem}
 
 \theoremstyle{break}
 \theorempreskip{2.0\topsep}
 \theorembodyfont{\song}
 \theoremseparator{}
-\newtheorem{problem}{题目}
+\newtheorem{problem}{\faCheckSquareO \ 题目}
 
 \theorempreskip{3.0\topsep}
 \theoremheaderfont{\kai\bfseries}
 \theoremseparator{：}
 \theorempostwork{\bigskip\hrule}
-\newtheorem*{solution}{解答}
+\newtheorem*{solution}{\faEdit \ 解答}
 \theorempostwork{\bigskip\hrule}
-\newtheorem*{revision}{订正}
+\newtheorem*{revision}{\faEdit \ 订正}
 
 \theoremstyle{plain}
-\newtheorem*{cause}{错因分析}
-\newtheorem*{remark}{注}
+\newtheorem*{cause}{\faCoffee \ 错因分析}
+\newtheorem*{remark}{\faCommentingO \ 注}
 
 \theoremstyle{break}
 \theorempostwork{\bigskip\hrule}
 \theoremsymbol{\ensuremath{\Box}}
-\newtheorem*{proof}{证明}
+\newtheorem*{proof}{\faEdit \ 证明}
 
 % for figs
 \renewcommand\figurename{图}
