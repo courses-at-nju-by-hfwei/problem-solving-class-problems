@@ -1,0 +1,136 @@
+% 1-0-warmup.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper, justified]{tufte-handout}
+
+\input{hw-preamble} % feel free to modify this file
+%%%%%%%%%%%%%%%%%%%%
+\title{第0讲：\LaTeX}
+\me{魏恒峰}{hfwei@nju.edu.cn}{}{}
+\date{\zhtoday} % or like 2019年9月13日
+%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\mfigcap{width = 0.60\linewidth}{figs/knuth-reading-tex-book}{Donald Knuth and \TeX}
+\mfigcap{width = 0.60\linewidth}{figs/lamport}{Leslie Lamport for \LaTeX}
+%%%%%%%%%%%%%%%%%%%%
+\noplagiarism % always keep this line
+%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+  \begin{center}{\fcolorbox{blue}{yellow!60}{\large 
+    目的：
+    \begin{inparaenum}[(1)]
+      \item 练习使用 \LaTeX{}
+      \item 熟悉如何提交作业
+      \end{inparaenum}}}
+  \end{center}
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%
+\beginrequired
+
+%%%%%%%%%%%%%%%
+\begin{problem}[图片]
+  在此处插入~\footnote{方法参见文件 `hw-preamble.tex'}
+  一幅你喜欢的图片~\footnote{人物、风景、漫画、海报、艺术$\cdots$}。
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[公式]
+  请用\LaTeX{}输出下图中的公式
+  ~\footnote{Tool: \href{http://detexify.kirelabs.org/classify.html}{Detexify}}
+  ~\footnote{Tool: \href{https://mathpix.com/}{mathpix}}。
+
+  \fig{width = 0.80\textwidth}{figs/formula}
+\end{problem}
+
+\begin{solution}
+  \[
+    \textrm{\textsf{RState}} = \red{\textrm{Your code here}\cdots}
+  \]
+\end{solution}
+%%%%%%%%%%%%%%%
+
+\newpage % to start a new page
+%%%%%%%%%%%%%%%
+\begin{problem}[表格]
+  请用\LaTeX{}输入下图中的表格~\footnote{Tool: \href{http://www.tablesgenerator.com/}{Tables Generator}}。
+
+  \fig{width = 0.15\textwidth}{figs/table}
+\end{problem}
+
+\begin{solution}
+  \begin{Verbatim}
+    \begin{table}[h]
+      \centering
+    \end{table}
+  \end{Verbatim}
+\end{solution}
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\beginoptional
+
+%%%%%%%%%%%%%%%
+\begin{problem}[算法]
+  完成下列算法伪代码~\footnote{Package \href{http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf}{algorithmicx}}~\footnote{欢迎贡献代码:\\ \href{https://github.com/hengxin/algorithms-pseudocode}{algorithms-pseudocode@hengxin}}。
+\end{problem}
+
+\begin{solution}%
+  伪代码如下：
+  \begin{algorithm}[H]
+    \caption{Sum of integers from 1 to $n$.}
+    \label{alg:sum}
+    \begin{algorithmic}[1]
+      \Procedure{Sum}{$n$}
+	\State $sum \gets 0$ \Comment{Initialization}
+	\State $\cdots$ \Comment{\red{Replaced with your code}}
+	\State \Return  $sum$ \Comment{Return}
+      \EndProcedure
+    \end{algorithmic}
+  \end{algorithm}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[作图]
+  给出绘制下图的 TikZ 代码
+  ~\footnote{你需要用到:
+    \begin{itemize}
+      \item ``foreach''
+      \item ``draw''
+      \item ``node''
+      \item ``bend left'', ``bend right''
+    \end{itemize}
+  }
+  ~\footnote{\href{https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ}{TikZ@wikibooks}}
+  ~\footnote{\href{http://mirror.utexas.edu/ctan/graphics/pgf/base/doc/pgfmanual.pdf}
+  {pgfmanual ($>1000$ pages)}}。
+
+  \fig{width = 0.80\textwidth}{figs/for-draw}
+\end{problem}
+
+\begin{solution}
+  \begin{Verbatim}
+    \documentclass[tikz]{standalone}
+    \begin{document}
+      \begin{tikzpicture}[]
+      \end{tikzpicture}
+    \end{document}
+  \end{Verbatim}
+\end{solution}
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\beginfb
+
+你可以写~\footnote{优先推荐 \href{http://39.100.120.199}{ProblemOverflow}}：
+\begin{itemize}
+  \item 对课程及教师的建议与意见
+  \item 教材中不理解的内容
+  \item 希望深入了解的内容
+  \item $\cdots$
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%
+\end{document}
