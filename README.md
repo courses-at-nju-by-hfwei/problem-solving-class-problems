@@ -12,8 +12,6 @@ We follow the [GitHub Standard Fork & Pull Request Workflow](https://gist.github
 
 (So [set up Git](https://help.github.com/articles/set-up-git/) first.)
 
-***Important Note: Using PDFLaTeX!!!***
-
 ## Maintainer
 - YOUR NAMES
 - Hengfeng Wei (hfwei@nju.edu.cn)
