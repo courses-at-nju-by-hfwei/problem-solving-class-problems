@@ -82,6 +82,7 @@
 % Each hw consists of four parts:
 \newcommand{\beginrequired}{\hspace{5em}\section{作业 (必做部分)}}
 \newcommand{\beginoptional}{\section{作业 (选做部分)}}
+\newcommand{\beginot}{\section{Open Topics}}
 \newcommand{\begincorrection}{\section{订正}}
 \newcommand{\beginfb}{\section{反馈}}
 
@@ -96,7 +97,8 @@
 \theorempreskip{2.0\topsep}
 \theorembodyfont{\song}
 \theoremseparator{}
-\newtheorem{problem}{题目}
+\newtheorem*{problem}{题目}
+\newtheorem{ot}{Open Topics}
 
 \theorempreskip{3.0\topsep}
 \theoremheaderfont{\kai\bfseries}
@@ -115,7 +117,7 @@
 \theoremsymbol{\ensuremath{\Box}}
 \newtheorem*{proof}{证明}
 
-\newcommand{\ot}{\blue{\bf [OT]}}
+% \newcommand{\ot}{\blue{\bf [OT]}}
 
 % for figs
 \renewcommand\figurename{图}

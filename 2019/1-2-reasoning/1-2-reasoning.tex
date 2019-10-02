@@ -26,8 +26,8 @@
 \beginrequired
 
 %%%%%%%%%%%%%%%
-\begin{problem}[UD Exercise $2.1$]
-  以下哪些是命题?
+\begin{problem}[改编自 UD Exercise $2.1$]
+  以下哪些是命题? 请简要说明理由。
 
   \begin{enumerate}[(1)]
     \item $X + 6 = 0$
@@ -46,7 +46,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{problem}[关于笛卡尔的一则笑话]
-  \mfig{width = 0.60\textwidth}{figs/Descartes}
+  \mfigcap{width = 0.60\textwidth}{figs/Descartes}{Ren\'e Descartes (1596 $\sim$ 1650)}
   笛卡尔是法国著名哲学家、物理学家、数学家、神学家。
   有一天，他走进一家酒吧。
   酒吧服务员问，``要来一杯吗?''。
@@ -128,7 +128,34 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{problem}[UD Problem $4.5\; (d, g, j, k)$]
+\begin{problem}[UD Problem $4.5\; (j, k)$]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[两种连续性]
+  A function $f$ from $\mathbb{R}$ to $\mathbb{R}$ is called 
+  \begin{itemize}
+    \item \emph{pointwise continuous} if
+      for every $x \in \mathbb{R}$ 
+      and every real number $\epsilon > 0$,
+      there exists real $\delta > 0$ such that 
+      for every $y \in \mathbb{R}$ with $|x - y| < \delta$, 
+      we have that $|f(x) -  f(y)|< \epsilon$. 
+    \item \emph{uniformly continuous} if
+      for every real number $\epsilon > 0$,
+      there exists real $\delta > 0$ such that 
+      for every $x, y \in \mathbb{R}$ with $|x - y| < \delta$, 
+      we have that $|f(x) -  f(y)|< \epsilon$. 
+  \end{itemize}
+
+  \begin{enumerate}[(1)]
+    \item 请用一阶谓词逻辑公式表示上述定义。
+    \item 请比较两种连续性的``强弱''关系，并举例说明。
+  \end{enumerate}
 \end{problem}
 
 \begin{solution}
@@ -155,7 +182,7 @@
 \beginoptional
 %%%%%%%%%%%%%%%
 \begin{problem}[Hilbert 式的命题逻辑推理系统]
-  \mfig{width = 0.60\textwidth}{figs/Hilbert}
+  \mfigcap{width = 0.60\textwidth}{figs/Hilbert}{David Hilbert (1862 $\sim$ 1943)}
   我们平常使用的推理系统是自然推理系统。
   本题介绍另一种推理系统，称为 Hilbert 式的推理系统。
   它的特点是有多条公理，但只有一条推理规则，而且推理是线性的。
@@ -177,17 +204,37 @@
 \end{solution}
 %%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%
+\beginot
 %%%%%%%%%%%%%%%
-\begin{problem}[\ot{} SAT Solver/SMT for Logic]
-\end{problem}
+\begin{ot}[自然推理系统]
+  \mfigcap{width = 0.60\textwidth}{figs/Gentzen}{Gerhard Gentzen (1909 $\sim$ 1945)}
+  请结合 Coq 
+  \href{https://github.com/hengxin/problem-solving-class-coq/blob/master/2019-1-coq/Logic.v}{Logic.v}
+  介绍一阶谓词逻辑(包含命题逻辑)的自然推理系统 (Designed by Gerhard Gentzen)。
+
+  参考资料:
+  \begin{itemize}
+    \item \href{https://github.com/hengxin/problem-solving-class-coq/blob/master/2019-1-coq/Logic.v}{Logic.v} in Coq
+    \item \href{https://www.cs.cornell.edu/courses/cs3110/2013sp/lectures/lec15-logic-contd/lec15.html}{Natural Deduction for Propositional Logic @ cs.cornell.edu}
+    \item \href{http://leanprover.github.io/logic\_and\_proof/natural\_deduction\_for\_propositional\_logic.html}
+      {Natural Deduction for Propositional Logic @ leanprover.github.io}
+  \end{itemize}
+\end{ot}
 
 \begin{solution}
 \end{solution}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{problem}[\ot{}]
-\end{problem}
+\begin{ot}[前束范式]
+  介绍一阶谓词逻辑中的前束范式 (Prenex normal form), 包括但不限于:
+  \begin{itemize}
+    \item 定义
+    \item 转换方法与举例
+    \item 用途简介
+  \end{itemize}
+\end{ot}
 
 \begin{solution}
 \end{solution}
