@@ -88,6 +88,10 @@
       in the plane?
       \mfigcap{width = 1.00\textwidth}{figs/bent-line-zn}{Examples for $Z_1$ and $Z_2$.}
       (注: 两端可以无限延长)
+    \item What's the maximum number $ZZ_n$ of regions
+      determined by $n$ ``zig-zag'' lines in the plane?
+      \mfigcap{width = 1.00\textwidth}{figs/zigzag-zzn}{Example for $ZZ_2$.}
+      (注: 两端可以无限延长)
   \end{enumerate}
 \end{problem}
 
@@ -123,21 +127,6 @@
 \beginoptional
 
 %%%%%%%%%%%%%%%
-\begin{problem}[Lines in the Plane (Continued)]
-  \begin{enumerate}[(1)]
-    \setcounter{enumi}{2}
-    \item What's the maximum number $ZZ_n$ of regions
-      determined by $n$ ``zig-zag'' lines in the plane?
-      \mfigcap{width = 1.00\textwidth}{figs/zigzag-zzn}{Example for $ZZ_2$.}
-      (注: 两端可以无限延长)
-  \end{enumerate}
-\end{problem}
-
-\begin{solution}
-\end{solution}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
 \begin{problem}[Numbers]
   Suppose $A \subseteq \set{1, 2, \cdots, 2n}$ with $|A| = n + 1$.
   Please prove that:
@@ -157,10 +146,12 @@
 
 %%%%%%%%%%%%%%%
 \begin{ot}[Coq]
-  结合 Coq \href{https://github.com/hengxin/problem-solving-class-coq/blob/master/2019-1-coq/Induction.v}{Induction.v}
-  介绍数学归纳法。
+  请介绍如何在 Coq 中使用数学归纳法。
 
-  更多内容???
+  \noindent 参考资料:
+  \begin{itemize}
+    \item \href{https://github.com/hengxin/problem-solving-class-coq/blob/master/2019-1-coq/Induction.v}{Induction.v}
+  \end{itemize}
 \end{ot}
 
 \begin{solution}
@@ -168,7 +159,18 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{ot}[]
+\begin{ot}[Double Counting]
+  ``Double Counting'' 是一种神奇、漂亮的组合证明技巧。
+  请了解 Double Counting 并以 ``Counting Trees'' 为例介绍这种证明技巧。
+
+  \noindent 参考资料:
+  \mfig{width = 0.95\textwidth}{figs/good-will-hunting-counting-trees}
+  \begin{itemize}
+    \item 电影 ``Good Will Hunting'' (心灵捕手)
+    \item Chapter 30 ``Cayley's formula for the number of trees''
+      of ``Proofs from THE BOOK'' (Fourth Edition)
+    \item \href{https://en.wikipedia.org/wiki/Double\_counting\_(proof\_technique)#Counting\_trees}{Counting trees @ wiki}
+  \end{itemize}
 \end{ot}
 
 \begin{solution}

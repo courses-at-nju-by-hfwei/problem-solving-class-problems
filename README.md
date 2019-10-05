@@ -1,9 +1,10 @@
 # problem-solving-class-problems
 
-Solutions to Selected Problems in the Problem Solving Class.
+Problem Sets for the Problem Solving Class.
 
 ## How to Contribute
 
+*(TODO: revised; this repository is now only for problem sets, not for solutions.)*
 ### Claim your contribution
 Please follow this [instruction](https://github.com/hengxin/problem-solving-class-problems/issues/2).
 
@@ -13,7 +14,8 @@ We follow the [GitHub Standard Fork & Pull Request Workflow](https://gist.github
 (So [set up Git](https://help.github.com/articles/set-up-git/) first.)
 
 ## Maintainer
-- YOUR NAMES
+- Yifan Pei
+- Bingkun Huang
 - Hengfeng Wei (hfwei@nju.edu.cn)
 
 ## Acknowledgment
