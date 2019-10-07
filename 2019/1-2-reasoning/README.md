@@ -6,7 +6,7 @@
 - UD第4章问题 1、5、9、11、20
 
 # NEW
-- UD第2章问题 5、7(a, c, f)、16、18
+- UD第2章问题 5、7(a, c, f)、16、(18 deleted)
 - UD第3章问题 3(d)、10、12
 - UD第4章问题 1、5(j, k)、9、20
 
@@ -15,4 +15,4 @@
 - OT:
   - 一阶谓词逻辑的自然推理系统
   - 前束范式 
-  - SAT Solvers/SMT for Logic
+  - SAT Solvers/SMT for Logic (留待以后)

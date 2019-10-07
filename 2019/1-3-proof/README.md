@@ -7,7 +7,7 @@
 
 # NEW
 - UD第5章问题 12、24
-- UD第18章问题 20、25 (c, d)、26; +prime problem
+- UD第18章问题 20、26; +prime problem
 - ES第24节练习 4、6、7
 
 - 选做题:
