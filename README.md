@@ -2,18 +2,16 @@
 
 Problem Sets for the Problem Solving Class.
 
-## How to Contribute
+For the solutions, please go to 
+[problem-solving-class-problem-solution](https://github.com/hengxin/problem-solving-class-problem-solution).
 
-*(TODO: revised; this repository is now only for problem sets, not for solutions.)*
-### Claim your contribution
-Please follow this [instruction](https://github.com/hengxin/problem-solving-class-problems/issues/2).
+## How to Contribute?
+- Open an [issue](https://github.com/hengxin/problem-solving-class-problems/issues/17)
+  for each problem you want to submit.
+- Describe your problem briefly in the issue template.
+- Note: Problems may be rejected.
 
-### Submit your solution
-We follow the [GitHub Standard Fork & Pull Request Workflow](https://gist.github.com/Chaser324/ce0505fbed06b947d962).
-
-(So [set up Git](https://help.github.com/articles/set-up-git/) first.)
-
-## Maintainer
+## Contributors
 - Yifan Pei
 - Bingkun Huang
 - Hengfeng Wei (hfwei@nju.edu.cn)
