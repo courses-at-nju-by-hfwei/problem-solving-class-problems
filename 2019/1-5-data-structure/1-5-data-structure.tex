@@ -1,11 +1,11 @@
-% 1-4-algorithm.tex
+% 1-5-data-structure.tex
 
 %%%%%%%%%%%%%%%%%%%%
 \documentclass[a4paper, justified]{tufte-handout}
 
 \input{hw-preamble} % feel free to modify this file
 %%%%%%%%%%%%%%%%%%%%
-\title{第4讲: 基本的算法结构}
+\title{第5讲: 数据结构}
 \me{魏恒峰}{hfwei@nju.edu.cn}{}{}
 \date{\zhtoday} % or like 2019年9月13日
 %%%%%%%%%%%%%%%%%%%%
@@ -15,12 +15,9 @@
 \noplagiarism % always keep this line
 %%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-  \mfig{width = 1.00\textwidth}{figs/knuth-beauty}
   \begin{center}{\fcolorbox{blue}{yellow!60}{\parbox{0.65\textwidth}{\large 
     \begin{itemize}
-      \item 复杂的程序来源于简单的结构。
-      \item 少即是多 (Less is More), 其它的都可以模拟。
-      \item \red{注意: 请写伪代码，不要写可执行代码。}
+      \item TODO
     \end{itemize}}}}
   \end{center}
 \end{abstract}
@@ -28,7 +25,7 @@
 \beginrequired
 
 %%%%%%%%%%%%%%%
-\begin{problem}[DH 2.2: Bubblesort]
+\begin{problem}[DH 2.10: Permutation Checking]
 \end{problem}
 
 \begin{solution}
@@ -36,7 +33,7 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{problem}[DH 2.4: Sum-Product]
+\begin{problem}[DH 2.11: Generating Permutations]
 \end{problem}
 
 \begin{solution}
@@ -44,7 +41,7 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{problem}[DH 2.7: Factorial]
+\begin{problem}[DH 2.12 (a: III; b; c): Examples for Generating Permutations via Stack]
 \end{problem}
 
 \begin{solution}
@@ -52,7 +49,7 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{problem}[DH 2.5: Simulation]
+\begin{problem}[DH 2.13: Algorithms for Generating Permutations via Stack]
 \end{problem}
 
 \begin{solution}
@@ -60,7 +57,15 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{problem}[DH 2.8: Simulation]
+\begin{problem}[DH 2.14 (b, c): Generating Permutations via Queue]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[DH 2.16: Treesort]
 \end{problem}
 
 \begin{solution}
@@ -71,11 +76,8 @@
 \beginoptional
 
 %%%%%%%%%%%%%%%
-\begin{problem}[Iteration 的表达能力]
-  \mfig{width = 0.80\textwidth}{figs/difficult}
-  DH 教材上介绍了两类迭代 (Iteration) 结构:
-  Bounded Iteration 与 Unbounded Iteration。
-  请查阅资料并思考，为何需要 Unbounded Iteration?
+\begin{problem}[Generating Permutations via Stack]
+  How many permutations of $A_n$ can be obtained by a stack?
 \end{problem}
 
 \begin{solution}
@@ -86,18 +88,7 @@
 \beginot
 
 %%%%%%%%%%%%%%%
-\begin{ot}[尾递归]
-  请介绍``尾递归'' (Tail Recursion)，如 (不限于):
-  \begin{itemize}
-    \item 概念
-    \item 举例 (正例与反例)
-    \item 与迭代的关系
-  \end{itemize}
-
-  \noindent 参考资料:
-  \begin{itemize}
-    \item \href{https://en.wikipedia.org/wiki/Tail\_call}{Tail call @ wiki}
-  \end{itemize}
+\begin{ot}[]
 \end{ot}
 
 % \begin{solution}
@@ -105,20 +96,7 @@
 %%%%%%%%%%%%%%%
 \vspace{0.50cm}
 %%%%%%%%%%%%%%%
-\begin{ot}[结构化程序设计]
-  请介绍``结构化程序设计'' (Structured Programming)，如 (不限于):
-  \begin{itemize}
-    \item 概念
-    \item ``Structured program theorem'' 简介
-    \item 关于 ``goto'' 语句的争论
-  \end{itemize}
-
-  \noindent 参考资料:
-  \begin{itemize}
-    \item \href{https://en.wikipedia.org/wiki/Structured\_programming}{Structured programming @ wiki}
-    \item \href{https://en.wikipedia.org/wiki/Structured\_program\_theorem}{Structured program theorem @ wiki}
-    \item \href{https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf}{Edgar Dijkstra: Go To Statement Considered Harmful}
-  \end{itemize}
+\begin{ot}[]
 \end{ot}
 
 % \begin{solution}
