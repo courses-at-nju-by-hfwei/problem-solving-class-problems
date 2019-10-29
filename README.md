@@ -14,6 +14,7 @@ For the solutions, please go to
 ## Contributors
 - Yifan Pei
 - Bingkun Huang
+- Ruize Tang
 - Hengfeng Wei (hfwei@nju.edu.cn)
 
 ## Acknowledgment

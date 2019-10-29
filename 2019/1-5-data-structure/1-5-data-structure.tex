@@ -15,22 +15,16 @@
 \noplagiarism % always keep this line
 %%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-  \begin{center}{\fcolorbox{blue}{yellow!60}{\parbox{0.65\textwidth}{\large 
+  \mfig{width = 1.30\textwidth}{figs/data-structure-linus}
+  \begin{center}{\fcolorbox{blue}{yellow!60}{\parbox{0.32\textwidth}{\large 
     \begin{itemize}
-      \item TODO
+      \item 数据之美，在于结构
+      \item 掌握基础的数据结构
     \end{itemize}}}}
   \end{center}
 \end{abstract}
 %%%%%%%%%%%%%%%%%%%%
 \beginrequired
-
-%%%%%%%%%%%%%%%
-\begin{problem}[DH 2.10: Permutation Checking]
-\end{problem}
-
-\begin{solution}
-\end{solution}
-%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{problem}[DH 2.11: Generating Permutations]
@@ -87,8 +81,27 @@
 %%%%%%%%%%%%%%%%%%%%
 \beginot
 
+\mfig{width = 0.85\textwidth}{figs/boring-teachers}
+{\bf 注意:} 本周的两个OT都是介绍程序设计语言的特性。
+平铺直叙的介绍方式很容易让听众精神涣散。
+你需要思考如何才能让大家对你以及你所讲解的知识保持兴趣。
+
 %%%%%%%%%%%%%%%
-\begin{ot}[]
+\begin{ot}[Pointers and Arrays]
+  介绍 C/C++ 语言中的指针与数组, 如 (不限于):
+  \begin{itemize}
+    \item 指针的基本概念
+    \item 数组的声明与使用
+    \item 指针与数组的关系
+    \item 多维数组
+  \end{itemize}
+
+  \noindent 参考资料
+  \begin{itemize}
+    \item \href{http://cslabcms.nju.edu.cn/problem\_solving/images/c/cc/The\_C\_Programming\_Language\_\%282nd\_Edition\_Ritchie\_Kernighan\%29.pdf}{Chapter 5 of ``K\&R: The C Programming Language (2nd Edition)''}
+    \item \href{http://cslabcms.nju.edu.cn/problem\_solving/images/5/53/Understanding\_and\_Using\_C\_Pointers\_\%28Richard\_Reese\%29.pdf}{Chapter 4 of ``Understanding and Using C Pointers''}
+    \item \href{http://ptgmedia.pearsoncmg.com/images/9780321714114/samplepages/0321714113.pdf}{Sections 3.5 and 3.6 of ``C++ Primer (5th Edition)''}
+  \end{itemize}
 \end{ot}
 
 % \begin{solution}
@@ -96,7 +109,21 @@
 %%%%%%%%%%%%%%%
 \vspace{0.50cm}
 %%%%%%%%%%%%%%%
-\begin{ot}[]
+\begin{ot}[Sequential Containers in C++ STL]
+  请介绍 C++ STL 中的顺序存储容器 
+  (\texttt{vector}, \texttt{deque}, \texttt{list}, \texttt{forward\_list}, \texttt{string}) 的用法。
+  \mfig{width = 0.70\textwidth}{figs/data-structure-first}
+
+  \noindent 要求:
+  \begin{itemize}
+    \item 不要引入过多的概念，报告的目的是让大家掌握这些基础容器的用法 (目前不必了解过多技术细节)
+  \end{itemize}
+
+  \noindent 参考资料
+  \begin{itemize}
+    \item \href{http://ptgmedia.pearsoncmg.com/images/9780321714114/samplepages/0321714113.pdf}{Chapters 3 and 9 of ``C++ Primer (5th Edition)''}
+    \item \href{https://en.wikipedia.org/wiki/Sequence\_container\_(C\%2B\%2B)}{Sequence container (C++) @ wiki}
+  \end{itemize}
 \end{ot}
 
 % \begin{solution}
