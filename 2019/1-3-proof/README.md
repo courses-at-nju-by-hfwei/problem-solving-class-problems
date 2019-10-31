@@ -16,3 +16,6 @@
 - OT:
   - `Induction.v` in Coq
   - Double Counting
+
+# Suggestions 
+- 去掉 UD 5.24 (Squaring)
