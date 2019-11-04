@@ -5,7 +5,7 @@
 
 \input{hw-preamble} % feel free to modify this file
 %%%%%%%%%%%%%%%%%%%%
-\title{第6讲: 程序设计语言}
+\title{第6讲: 程序设计语言的语法与语义}
 \me{魏恒峰}{hfwei@nju.edu.cn}{}{}
 \date{\zhtoday} % or like 2019年9月13日
 %%%%%%%%%%%%%%%%%%%%
@@ -15,9 +15,11 @@
 \noplagiarism % always keep this line
 %%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-  \begin{center}{\fcolorbox{blue}{yellow!60}{\parbox{0.32\textwidth}{\large 
+  \mfig{width = 0.85\textwidth}{figs/syntax-semantics}
+  \begin{center}{\fcolorbox{blue}{yellow!60}{\parbox{0.70\textwidth}{\large 
     \begin{itemize}
-      \item TODO
+      \item 逻辑系统有语法、语义之分; 程序设计语言亦如是
+      \item 欢迎进入\href{https://en.wikipedia.org/wiki/Programming\_language\_theory}{程序设计语言理论}的广阔世界
     \end{itemize}}}}
   \end{center}
 \end{abstract}
@@ -25,23 +27,18 @@
 \beginrequired
 
 %%%%%%%%%%%%%%%
-\begin{problem}[]
-\end{problem}
+\begin{problem}[IMP]
+  考虑程序设计语言 {\bf IMP} (Imperative), 它包含如下元素:
+  \begin{itemize}
+    \item 整数集合 $\mathbb{Z}$ (可用 $m,n$ 表示其中的元素)
+    \item 真值集合 $\mathbb{T} = \set{T, F}$
+    \item 变量集合 $\mathbb{V}$ (可用 $v$ 表示其中的元素)
+    \item 算法表达式 {\bf Aexp}, 支持 ``$+, -, \times$'' 三则运算
+    \item 布尔表达式 {\bf Bexp}, 支持 ``$=, \le$'' 比较操作与基本的逻辑操作
+    \item 语句 {\bf St}, 包括赋值语句 ($:=$)、顺序语句 ($;$)、选择语句 (if-then-else)与循环语句 (while-do)
+  \end{itemize}
 
-\begin{solution}
-\end{solution}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{problem}[]
-\end{problem}
-
-\begin{solution}
-\end{solution}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{problem}[]
+  \noindent 请为 {\bf IMP} 设计语法，并使用 BNF 描述。
 \end{problem}
 
 \begin{solution}
@@ -52,7 +49,22 @@
 \beginoptional
 
 %%%%%%%%%%%%%%%
-\begin{problem}[]
+\begin{problem}[``It is Ridiculous!'']
+  教材 DH ``Routines as Parameters'' 章节 (第 53、54 页) 中给了一段伪代码， \\
+  \begin{center}
+    {``\texttt{subroutine {\bf P-with-parameter-V}}''}
+  \end{center}
+  并介绍了如下调用可能产生的问题: \\
+  \begin{center}
+    {``\texttt{call {\bf P-with-parameter-P}}''}。
+  \end{center}
+
+  \noindent {\bf 请问, 你认为是否有(或者，是否应该有)程序设计语言允许我们写出这样的代码?} 
+  \begin{itemize}
+    \item 如果你认为没有或者不应该有，请给出你的理由。
+    \item 如果有，请给出你的可执行代码 (比如使用 C/C++, Haskell, Coq 语言等)，
+      并描述代码运行时的效果。
+  \end{itemize}
 \end{problem}
 
 \begin{solution}
@@ -63,7 +75,20 @@
 \beginot
 
 %%%%%%%%%%%%%%%
-\begin{ot}[Pointers and Arrays]
+\begin{ot}[正则表达式]
+  请介绍正则表达式 (Regualr Expression) 的语法、语义与用例等。
+
+  \noindent 基本要求:
+  \begin{itemize}
+    \item 循序渐进
+    \item 使用有趣而实用的例子
+  \end{itemize}
+
+  \noindent 参考资料:
+  \begin{itemize}
+    \item \href{https://en.wikipedia.org/wiki/Regular\_expression}{Regular expression @ wiki}
+    \item \href{https://regex101.com/}{regex101}
+  \end{itemize}
 \end{ot}
 
 % \begin{solution}
@@ -71,7 +96,17 @@
 %%%%%%%%%%%%%%%
 \vspace{0.50cm}
 %%%%%%%%%%%%%%%
-\begin{ot}[]
+\begin{ot}[程序设计语言的语义]
+  阅读并介绍经典论文 
+  \href{https://github.com/hengxin/problem-solving-class-paperswelove/tree/master/1st-semester}{``CACM1969 (Hoare) An Axiomatic Basis for Computer Progamming'' @ problem-solving-class-paperswelove}:
+
+  \mfig{width = 0.75\textwidth}{figs/hoare}
+  \begin{itemize}
+    \item 作者简介 \href{https://en.wikipedia.org/wiki/Tony\_Hoare}{Tony Hoare @ wiki}
+    \item 概览文章的结构与贡献
+    \item 重点介绍第三节 ``Program Execution'' 的内容
+    \item 介绍 Table III 中的证明示例
+  \end{itemize}
 \end{ot}
 
 % \begin{solution}

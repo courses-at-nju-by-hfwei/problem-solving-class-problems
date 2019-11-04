@@ -16,3 +16,6 @@
   - 一阶谓词逻辑的自然推理系统
   - 前束范式 
   - SAT Solvers/SMT for Logic (留待以后)
+
+## TODO
+- 去掉 UD 4.20
