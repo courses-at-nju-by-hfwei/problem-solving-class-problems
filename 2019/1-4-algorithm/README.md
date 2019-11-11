@@ -16,3 +16,4 @@
 # Suggestion
   - [ ] Call Stack (修改后作为第一个 OT)
     - 参考: 《深入理解计算机系统》
+  - [ ] 去掉 DH 2.4 (Sum&Product)
