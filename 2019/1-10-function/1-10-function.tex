@@ -1,0 +1,229 @@
+% 1-10-function.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper, justified]{tufte-handout}
+
+\input{hw-preamble} % feel free to modify this file
+%%%%%%%%%%%%%%%%%%%%
+\title{第10讲: 函数}
+\me{魏恒峰}{hfwei@nju.edu.cn}{}{}
+\date{\zhtoday} % or like 2019年9月13日
+%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+%%%%%%%%%%%%%%%%%%%%
+\noplagiarism % always keep this line
+%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+  \begin{center}{\fcolorbox{blue}{yellow!60}{\parbox{0.65\textwidth}{\large 
+    \begin{itemize}
+      \item 有了 functions，(大部分) 数学就 functions 了。
+    \end{itemize}}}}
+  \end{center}
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%
+\beginrequired
+
+%%%%%%%%%%%%%%%
+\begin{problem}[UD Problem 14.3 (b, d, g)]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[UD Problem 14.5]
+\end{problem}
+
+\begin{proof}
+\end{proof}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[UD Problem 14.23]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[UD Problem 15.10 (f, g, h)]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[UD Problem 15.14]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[UD Problem 15.15]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[UD Problem 16.6]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[UD Problem 16.14]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[UD Problem 16.17]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[UD Problem 16.22]
+\end{problem}
+
+\begin{proof}
+\end{proof}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[UD Problem 17.22]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{problem}[UD Problem 17.23]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\beginoptional
+
+%%%%%%%%%%%%%%%
+\begin{problem}[Monotonicity]
+  Assume that $F: \mathcal{P}(A) \to \mathcal{P}(A)$ and that $F$ has the monotonicity property:
+  \[
+    X \subseteq Y \subseteq A \implies F(X) \subseteq F(Y).
+  \]
+
+  \noindent Define
+  \[
+    B = \bigcap \set{X \subseteq A \mid F(X) \subseteq X}
+  \]
+
+  \[
+    C = \bigcup \set{X \subseteq A \mid X \subseteq F(X)}.
+  \]
+
+  \begin{enumerate}[(a)]
+    \item Show that $F(B) = B$ and $F(C) = C$.
+    \item Show that if $F(X) = X$, then $B \subseteq X \subseteq C$.
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\beginot
+
+%%%%%%%%%%%%%%%
+\begin{ot}[Lambda Calculus]
+  \mfigcap{width = 0.80\textwidth}{figs/scheme-logo}{The Scheme Programming Language}
+
+  函数也可以作为数学的基础 (Foundations of Mathematics)。
+  请介绍 Lambda Calculus 的基础知识, 如 (不限于):
+  \begin{itemize}
+    \item 基本理念 (为什么要研究它?)
+    \item 语法 
+    \item 操作
+    \item ``高阶函数''的概念
+  \end{itemize}
+
+  \noindent 参考资料:
+  \begin{itemize}
+    \item \href{https://en.wikipedia.org/wiki/Lambda\_calculus}{Lambda calculus @ wiki}
+    \item \href{http://worrydream.com/AlligatorEggs/}{AlligatorEggs Game for Lambda Calculus}
+    \item \href{https://jacksongl.github.io/files/demo/lambda/index.htm}{Lambda Calculus Interpreter}
+  \end{itemize}
+\end{ot}
+
+% \begin{solution}
+% \end{solution}
+%%%%%%%%%%%%%%%
+\vspace{0.50cm}
+%%%%%%%%%%%%%%%
+\begin{ot}[Church Encoding]
+  请介绍递归函数，如 (不限于):
+  \begin{itemize}
+    \item 基本理念 (为什么要研究它?)
+    \item 原始递归函数 (重点)
+      \begin{itemize}
+	\item 定义
+	\item 常见原始递归函数
+      \end{itemize}
+    \item $\mu$-递归函数
+      \begin{itemize}
+	\item 定义
+	\item 与原始递归函数的关系
+      \end{itemize}
+  \end{itemize}
+
+  \noindent 参考资料:
+  \begin{itemize}
+    \item \href{https://en.wikipedia.org/wiki/Primitive\_recursive\_function}{Primitive recursive function @ wiki}
+    \item \href{https://en.wikipedia.org/wiki/Ackermann\_function}{Ackermann function @ wiki}
+    \item \href{https://en.wikipedia.org/wiki/\%CE\%9C-recursive\_function}{$\mu$-recursive function @ wiki}
+  \end{itemize}
+\end{ot}
+
+% \begin{solution}
+% \end{solution}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+% 如果没有需要订正的题目，可以把这部分删掉
+
+\begincorrection
+
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+% 如果没有反馈，可以把这部分删掉
+\beginfb
+
+% 你可以写
+% ~\footnote{优先推荐 \href{problemoverflow.top}{ProblemOverflow}}：
+% \begin{itemize}
+%   \item 对课程及教师的建议与意见
+%   \item 教材中不理解的内容
+%   \item 希望深入了解的内容
+%   \item $\cdots$
+% \end{itemize}
+%%%%%%%%%%%%%%%%%%%%
+\end{document}
