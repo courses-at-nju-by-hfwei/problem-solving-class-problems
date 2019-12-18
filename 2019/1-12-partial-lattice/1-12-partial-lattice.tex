@@ -1,11 +1,11 @@
-% 1-11-infinity.tex
+% 1-12-partial-lattice.tex
 
 %%%%%%%%%%%%%%%%%%%%
 \documentclass[a4paper, justified]{tufte-handout}
 
 \input{hw-preamble} % feel free to modify this file
 %%%%%%%%%%%%%%%%%%%%
-\title{第11讲: 有穷与无穷}
+\title{第12讲: 偏序关系与格}
 \me{魏恒峰}{hfwei@nju.edu.cn}{}{}
 \date{\zhtoday} % or like 2019年9月13日
 %%%%%%%%%%%%%%%%%%%%
@@ -15,10 +15,10 @@
 \noplagiarism % always keep this line
 %%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-  \mfigcap{width = 0.80\textwidth}{figs/cantor}{Georg Cantor (1845 $\sim$ 1918)}
+  \mfig{width = 1.00\textwidth}{figs/creativity-angles}
   \begin{center}{\fcolorbox{blue}{yellow!60}{\parbox{0.65\textwidth}{\large 
     \begin{itemize}
-      \item ``Veniet tempus, quo ista que nunc latent, in lucem dies extrahat et longioris avi diligentia.''
+      \item Lattice theory draws on both order theory and universal algebra.
     \end{itemize}}}}
   \end{center}
 \end{abstract}
@@ -26,7 +26,7 @@
 \beginrequired
 
 %%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 21.6]
+\begin{problem}[SM Problem 14.44]
 \end{problem}
 
 \begin{solution}
@@ -34,7 +34,7 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 21.10]
+\begin{problem}[SM Problem 14.58]
 \end{problem}
 
 \begin{proof}
@@ -42,7 +42,7 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 22.10]
+\begin{problem}[SM Problem 14.62]
 \end{problem}
 
 \begin{solution}
@@ -50,7 +50,7 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 22.11]
+\begin{problem}[SM Problem 14.63]
 \end{problem}
 
 \begin{solution}
@@ -58,7 +58,7 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 22.18]
+\begin{problem}[SM Problem 14.71]
 \end{problem}
 
 \begin{solution}
@@ -66,7 +66,7 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 22.21]
+\begin{problem}[SM Problem 14.72]
 \end{problem}
 
 \begin{solution}
@@ -74,47 +74,7 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 23.1]
-\end{problem}
-
-\begin{solution}
-\end{solution}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 23.3 (a, d)]
-\end{problem}
-
-\begin{solution}
-\end{solution}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 23.4]
-\end{problem}
-
-\begin{solution}
-\end{solution}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 23.9]
-\end{problem}
-
-\begin{proof}
-\end{proof}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 23.12]
-\end{problem}
-
-\begin{solution}
-\end{solution}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 24.16]
+\begin{problem}[SM Problem 14.75]
 \end{problem}
 
 \begin{solution}
@@ -125,7 +85,7 @@
 \beginoptional
 
 %%%%%%%%%%%%%%%
-\begin{problem}[UD Problem 24.15]
+\begin{problem}[2017级问题求解(一)期末试卷 题目 5]
 \end{problem}
 
 \begin{solution}
@@ -135,20 +95,19 @@
 %%%%%%%%%%%%%%%%%%%%
 \beginot
 
-注: 基数与序数比较难以理解。你可以选择介绍一些相对容易的部分。
 %%%%%%%%%%%%%%%
-\begin{ot}[基数]
-  \mfig{width = 0.60\textwidth}{figs/aleph-null}
-  请介绍基数 (Cardinal number) ，如 (不限于):
+\begin{ot}[Dilworth's Theorem]
+  介绍 Dilworth's theorem，如 (不限于):
   \begin{itemize}
-    \item 定义 
-    \item 运算
-    \item 你认为有意思的相关内容
+    \item 定理
+    \item 证明
+    \item 应用 
   \end{itemize}
 
   \noindent 参考资料:
   \begin{itemize}
-    \item \href{https://en.wikipedia.org/wiki/Cardinal\_number}{Cardinal number @ wiki}
+    \item \href{https://en.wikipedia.org/wiki/Dilworth\%27s\_theorem}{Dilworth's theorem @ wiki}
+    \item Chapter 6 of Book ``A Course in Combinatorics'' (2nd Edition) by J.H. van Lint and R.M. Wilson
   \end{itemize}
 \end{ot}
 
@@ -157,18 +116,18 @@
 %%%%%%%%%%%%%%%
 \vspace{0.50cm}
 %%%%%%%%%%%%%%%
-\begin{ot}[序数]
-  请介绍序数 (Ordinal number) ，如 (不限于):
-  \mfig{width = 0.85\textwidth}{figs/ordinal-number}
+\begin{ot}[Lattice of Stable Matchings]
+  请从 Distributive Lattice 的角度介绍 Stable Matching 问题, 如 (不限于):
   \begin{itemize}
-    \item 定义 
-    \item 运算
-    \item 你认为有意思的相关内容
+    \item Stable Matching 问题 
+    \item Stable Matching 算法 
+    \item 与 Distributive Lattice 的关系
   \end{itemize}
 
   \noindent 参考资料:
   \begin{itemize}
-    \item \href{https://en.wikipedia.org/wiki/Ordinal\_number}{Ordinal number@ wiki}
+    \item \href{https://en.wikipedia.org/wiki/Lattice\_of\_stable\_matchings}{Lattice of stable matchings @ wiki}
+    \item \href{https://www.youtube.com/watch?v=Qcv1IqHWAzg}{Stable Marriage Problem @ Numberphile}
   \end{itemize}
 \end{ot}
 
