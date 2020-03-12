@@ -10,8 +10,15 @@
 - TC 第 4 章问题 4
 
 ### NEW
+- TC 4.1-5
+- TC 4.3-3
+- TC 4.4-5
+- TC 4.5-4
+- TC Problem 4-1
+- TC Problem 4-3 (Except f and j)
 
 ### Additional
+- TC Problem 4-3 (f and j)
 
 ## OT
 
@@ -20,3 +27,5 @@
 - 介绍 Akra–Bazzi Method
 
 ### NEW
+- 介绍 Akra–Bazzi Method
+- ???
