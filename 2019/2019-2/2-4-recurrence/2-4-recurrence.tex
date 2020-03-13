@@ -88,12 +88,13 @@
 
 %%%%%%%%%%%%%%%
 \begin{ot}[Akra-Bazzi Method]
-  介绍求解递归式的 Akra-Bazzi Method, 包括定理介绍、应用与简要证明思路。
+  介绍求解递归式的 Akra-Bazzi Method, 比如定理介绍、应用与简要证明思路。
 
-  参考资料:
+  \noindent 参考资料:
   \begin{itemize}
-    \item 论文~\cite{ABMethod}
+    \item 论文 ``On the Solution of Linear Recurrence Equations''~\cite{ABMethod}。
     \item \href{https://en.wikipedia.org/wiki/Akra\%E2\%80\%93Bazzi\_method}{Akra–Bazzi method @ wiki}
+    \item 更多精彩, 由你掌握。
   \end{itemize}
 \end{ot}
 
@@ -102,7 +103,19 @@
 %%%%%%%%%%%%%%%
 \vspace{0.50cm}
 %%%%%%%%%%%%%%%
-\begin{ot}[]
+\begin{ot}[\textsc{Merge-Sort}]
+  请你深入分析 \textsc{Merge-Sort}, 例如:
+  \begin{itemize}
+    \item 严格求解 \textsc{Merge-Sort} 的递推式
+      \[
+        T(n) = T(\lfloor n/2 \rfloor) + T(\lceil n/2 \rceil) + N, \text{for } n > 1 \text{ with } T(1) = 0.
+      \]
+      参考资料: Section 2.6 of ``An Introduction to the Analysis of Algorithm'' (2nd Edition)~\cite{AoA}。
+    \item \textsc{Merge} 阶段的下界。
+      重点介绍两个有序数组大小相同的情况; 可概述其它情况。
+      参考资料: Section 5.3.2 ``Minimum Comparison Merging'' of TAOCP Vol 3~\cite{TAOCP-Vol3}。
+    \item 更多精彩, 由你掌握。
+  \end{itemize}
 \end{ot}
 
 % \begin{solution}
