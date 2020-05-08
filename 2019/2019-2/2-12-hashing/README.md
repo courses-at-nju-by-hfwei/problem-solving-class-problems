@@ -10,8 +10,14 @@
 - TC 第 11 章问题 1、2
 
 ### NEW
+- CS 5.5-8 (a, b, c)
+- TC 11.2-3
+- TC 11.3-3
+- TC 11.4-3
+- TC Problem 11-1、Problem 11-2
 
 ### Additional
+- TC 11.2-6
 
 ## OT
 
