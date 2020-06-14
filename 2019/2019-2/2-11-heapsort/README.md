@@ -13,7 +13,7 @@
 - TC 6.1-2、6.1-7
 - TC 6.2-5、6.2-6
 - TC 6.3-3
-- TC 6.4-2、6.4-4
+- TC 6.4-2、6.4-4、6.4-5
 - TC 6.5-5、6.5-9
 
 ### Additional
@@ -26,3 +26,5 @@
 - Binary tree => Heap => Priority queue
 
 ### NEW
+- Binomial Heaps
+- Fibonacci Heaps
